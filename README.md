@@ -28,8 +28,7 @@ The output will be five csv files for uplink and downlink:
 **(b)** extrct from the PCAP                         
 To add the VR to Downlink, we need to extract the IPI, FS, IFI from the PCAP datasets published in [37]. With tune the folder address in python code in '3_ReadPCAP_ExtractFeatures.ipynb'
 the dataset witll be extrcted in csv files.
------------------------------------------------------------
 **(C)** Concatinate the Datasets and shuffle the samples are doint with this instruction in Python.
-
-             ** df = pd.concat(UL1,UL2,UL3, ignore_index=True, sort=False).sample(frac=1)**
+          
+          ** df = pd.concat(UL1,UL2,UL3, ignore_index=True, sort=False).sample(frac=1)**
 
