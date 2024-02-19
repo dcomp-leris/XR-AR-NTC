@@ -42,8 +42,8 @@ intensive tasks to edge servers, enhancing performance and user experience. With
 The CSV files will be stored in the same folder. The next cell in the Python code merges the CSV files
 as DS.csv, then adds direction (UL or DL) and preprocesses the CSV file. The final output is DS3.csv which is located in the root directory. 
 
-### 3-3-Extract the features from CSV files extracted from Wireshark
-##### Run the 4_Read&Extract_Features_CSV.ipynb  and set the folder your PCAP file is located as below...
+### 3-3-Extract the features from CSV files
+##### Run the **4_Read&Extract_Features_CSV.ipynb** and set the folder your PCAP file is located as below...
 
                                # The root Directory (Enter your address)
                                   root_directory = r'directory includes PCAP or PCAPnj Files'
@@ -53,11 +53,11 @@ as DS.csv, then adds direction (UL or DL) and preprocesses the CSV file. The fin
 The CSV files will be stored in the same folder. The next cell in the Python code merges the CSV files 
 as DS.csv and then adds direction (UL or DL) and preprocesses the CSV file. The final output is DS3.csv. 
 
-## 4- Train and evaluate the DT model
+## 4- Train and Evaluate the DT Model
 ### 4-1- Evaluation
 Evaluation is done with Accuracy, precision, recall, f-score, and confusion matrix
 
-#### 4-2- Run the 1_MultiClass_DT_ARCG.ipynb and only set the training dataset with the features in CSV format as below.
+#### 4-2- Run the **1_MultiClass_DT_ARCG.ipynb** and only set the training dataset with the features in CSV format as below.
                                
                                # Load datasets
                               ### Enter your Dataset file address with CSV format
@@ -77,7 +77,7 @@ In Cell number 6 only set the test dataset you can test the DT model
 ### 5-1- Evaluation
 Evaluation is done with Accuracy, precision, recall, f-score, and confusion matrix
 
-#### 5-2- Run the 2_MultiClass_RF_ARCG.ipynb and only set the training dataset with the features in CSV format as below.
+#### 5-2- Run the **2_MultiClass_RF_ARCG.ipynb** and only set the training dataset with the features in CSV format as below.
                                
                                # Load datasets
                               ### Enter your Dataset file address with csv format
@@ -85,7 +85,7 @@ Evaluation is done with Accuracy, precision, recall, f-score, and confusion matr
                                   cg_data = pd.read_csv(r'CG.csv')
                                   others_data = pd.read_csv(r'others.csv')
 ### 5-3- Test the model with other datasets
-In Cell numbr 5 only set the test dataset you can test the DT model
+In Cell number 5 only set the test dataset you can test the DT model
                               
                               # Load the test dataset (Mentioned in Table (IV) of the Paper)
                                   AR_Test = pd.read_csv(r'AR-Test.csv')
