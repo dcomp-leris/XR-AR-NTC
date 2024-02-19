@@ -1,26 +1,27 @@
-# XR-AR_NTC
-# Augmented Reality and Cloud Gaming Network Traffic Discrimination
-This is for XR/AR network traffic classification & Paper reproducibility.
+# From Pixels to Packets: Traffic Classification of Augmented Reality and Cloud Gaming
+
 ## 1- Abstract
-The Extended Reality (XR) technologies continue to advance, driven by hardware and software growth in this scope. In addition to use cases e.g. games and education which run a completely immersive, computer-generated environment by Virtual Reality (VR), there are some requirements that need to keep the user interactive with the real world and overlay the digital object onto the real world e.g. repair, maintenance, health care which it is done by Augmented Reality (AR). The AR applications and users are rising with having matured the VR Head Mounted Display (HMD) and software. The AR is sensitive to the computing resource, so it needs to offload its functionality to improve its flexibility but it makes it sensitive to delay; in addition, its  interaction with the real world makes this sensitivity more drastic. The discrimination of the network traffic belonging to AR, as the first step for appropriate resource allocation, is becoming more critical with the growth of its application and remote rendering capability.  In this paper, we propose a decision Tree (DT) and Random Forest (RF) model to classify the network traffic into AR, Cloud Gaming (CG) and others. Secondly, the features are examined to detect the AR and CG network traffic accurately. Thirdly, the model is evaluated with existing datasets to show its performance in accuracy, precision, recall, and f-score. Finally, a dataset for AR and CG are collected to be used in this research and published to pave the way for other research on AR network traffic discrimination. This paper is useful for those who are working on network traffic classification specifically AR network traffic classification.
+Augmented Reality (AR) real-time interaction between users and digital overlays in the real world demands low latency to ensure seamless experiences. To address computational and battery constraints, AR devices often offload processing-
+intensive tasks to edge servers, enhancing performance and user experience. With the increasing adoption and complexity of AR applications, especially in remote rendering, accurately classifying AR network traffic becomes essential for effective resource allocation. This paper explores two methods based on Decision Tree (DT) and Random Forest (RF) to classify network traffic among AR, Cloud Gaming (CG), and other categories. We rigorously analyze specific features to precisely identify AR and CG traffic. Our models demonstrate robust performance, achieving accuracy rates ranging from 88.40% to 94.87% against pre-existing datasets. Moreover, we contribute with a novel dataset encompassing AR and CG traffic, curated specifically for this study and made publicly available to facilitate reproducible research in AR network traffic classification.
+
 ## 2- The dataset features
-a) IPI (Inter Packet Interval)
-b) FS (Frame Size)
-c) IFI (Inter Frame Interval)
-## 3- Datasets with the features
+(a) IPI (Inter Packet Interval), (b) FS (Frame Size), and (c) IFI (Inter Frame Interval).
+
+## 3-Generate Dataset using Statistical Distribution Model
+
 ### 3-1-Generating Features based on Johnson'U and the parameters in [23]
-##### Run the 5_Generate_UL_DL_DS_.ipynb and set the numbr of samples and the address to store the csv files as below:
+##### Run the **5_Generate_UL_DL_DS_.ipynb** and set the number of samples and the address to store the CSV files as below:
 
                                 # Set the number of samples for generating
                                     n_sample = 1000
                                     
-                               # Save the combined dataset to a CSV file (***************** Add your address to Save th CSV files)
+                                # Save the combined dataset to a CSV file (***************** Add your address to Save the CSV files)
                                     combined_dataset_LR.to_csv('AR_UL_LR.csv', index=False)
                                     combined_dataset_MR.to_csv('AR_UL_MR.csv', index=False)
                                     combined_dataset_HR.to_csv('AR_UL_HR.csv', index=False)
                                     combined_dataset_AR70.to_csv('AR_DL70.csv', index=False)
                                     combined_dataset_AR90.to_csv('AR_DL90.csv', index=False)
-  The dataset will be generated for Uplink & Downlink sperated as below:
+  The dataset will be generated for Uplink & Downlink separated as below:
                                 #####               Uplink 
                                           Low Resolution    --> 'AR_UL_LR.csv'|
                                           Medeum Resolution --> 'AR_UL_MR.csv'|
@@ -30,27 +31,27 @@ c) IFI (Inter Frame Interval)
                                           Rate is 90Hz --> 'AR_DL90.csv'|
   
 
-### 3-2-Extrct the features from PCAP(PCAPNG) files extracted
-##### Run the 3_ReadPCAP_ExtractFeatures.ipynb and set the folder your pcap file is located as below...
+### 3-2-Extract the Features from PCAP(PCAPNG) Source Files 
+##### Run the **3_ReadPCAP_ExtractFeatures.ipynb** and set the folder your PCAP file is located as below...
 
                               # The root Directory (Enter your address)
-                                  root_directory = r'Directory includes PCAP or PCAPnj Files'
+                                  root_directory = r'directory includes PCAP or PCAPnj Files'
 
                               # set the extension to find from the rood directory
                                   extension = '.pcapng'  # ('.pcap' or '.pcapng')
-The csv files will be stored in the same folder. The next cell in the Python code merge the CSV files 
-as DS.csv and then add direction (UL or DL) and preprocess the csv file. The final output is DS3.csv. 
+The CSV files will be stored in the same folder. The next cell in the Python code merges the CSV files
+as DS.csv, then adds direction (UL or DL) and preprocesses the CSV file. The final output is DS3.csv which is located in the root directory. 
 
-### 3-3-Extrct the features from CSV files extracted from Wireshark
-##### Run the 4_Read&Extract_Features_CSV.ipynb  and set the folder your pcap file is located as below...
+### 3-3-Extract the features from CSV files extracted from Wireshark
+##### Run the 4_Read&Extract_Features_CSV.ipynb  and set the folder your PCAP file is located as below...
 
                                # The root Directory (Enter your address)
-                                  root_directory = r'Directory includes PCAP or PCAPnj Files'
+                                  root_directory = r'directory includes PCAP or PCAPnj Files'
 
-                               # set the extension to find from the rood directory
+                               # set the extension to find from the root directory
                                   extension = '.csv'  # ('.pcap' or '.pcapng')
-The csv files will be stored in the same folder. The next cell in the Python code merge the CSV files 
-as DS.csv and then add direction (UL or DL) and preprocess the csv file. The final output is DS3.csv. 
+The CSV files will be stored in the same folder. The next cell in the Python code merges the CSV files 
+as DS.csv and then adds direction (UL or DL) and preprocesses the CSV file. The final output is DS3.csv. 
 
 ## 4- Train and evaluate the DT model
 ### 4-1- Evaluation
@@ -59,12 +60,12 @@ Evaluation is done with Accuracy, precision, recall, f-score, and confusion matr
 #### 4-2- Run the 1_MultiClass_DT_ARCG.ipynb and only set the training dataset with the features in CSV format as below.
                                
                                # Load datasets
-                              ### Enter your Dataset file address with csv format
+                              ### Enter your Dataset file address with CSV format
                                   ar_data = pd.read_csv(r'AR.csv')
                                   cg_data = pd.read_csv(r'CG.csv')
                                   others_data = pd.read_csv(r'others.csv')
 ### 4-3- Test the model with other datasets
-In Cell numbr 6 only set the test dataset you can test the DT model
+In Cell number 6 only set the test dataset you can test the DT model
                               
                               # Load the test dataset (Mentioned in Table (IV) of the Paper)
                                   AR_Test = pd.read_csv(r'AR-Test.csv')
@@ -92,7 +93,7 @@ In Cell numbr 5 only set the test dataset you can test the DT model
                                   Other_Test = pd.read_csv(r'Other_Test.csv')
 
 ## 6- Collected Dataset
-It is available in https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56
+It is available at https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56
 
 ## 7- Conclusion
 This document helps the reader of the paper to be able to reproduce the model and use it..
