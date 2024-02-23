@@ -103,3 +103,7 @@ CG--> https://www.kaggle.com/datasets/carloshfm/cloud-gaming-network-telemetry/d
 ## 7- Conclusion
 This document helps the reader of the paper to be able to reproduce the model and use it..
 
+## 8- License
+
+All the assets in this repo is released under the [BSD-3 License](https://opensource.org/license/bsd-3-clause/). You are free to use, modify, and distribute this software, provided that you include the original copyright notice and disclaimers. The BSD-3 License is a permissive open-source license that encourages collaboration and innovation. It grants you the freedom to adapt this software to your needs while respecting the original author's contributions. Feel free to contribute to the project or build upon it for your own projects. Please review the LICENSE file on the root of this repo for the full terms and conditions of this license.
+
