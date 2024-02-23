@@ -101,7 +101,7 @@ AR --> https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775b
 CG--> https://www.kaggle.com/datasets/carloshfm/cloud-gaming-network-telemetry/data
 
 ## 7- Conclusion
-This document helps the reader of the paper to be able to reproduce the model and use it..
+This document helps the reader of the paper to be able to reproduce the model and use it.
 
 ## 8- License
 
