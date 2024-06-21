@@ -99,7 +99,7 @@ The collections are available:
 
 AR --> https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56
 
-CG--> https://www.kaggle.com/datasets/carloshfm/cloud-gaming-network-telemetry/data
+CG--> [https://www.kaggle.com/datasets/carloshfm/cloud-gaming-network-telemetry/data](https://www.kaggle.com/datasets/bff9c84e3e1db2659962e9ab161597059f4268d66d336f84073b59bed377528c)
 
 ## 7- Conclusion
 This document helps the reader of the paper to be able to reproduce the model and use it.
