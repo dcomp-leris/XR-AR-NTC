@@ -1,5 +1,12 @@
 # From Pixels to Packets: Traffic Classification of Augmented Reality and Cloud Gaming
 
+[![Conference](https://img.shields.io/badge/accepted-Netsoft2024-blue)](https://netsoft2024.ieee-netsoft.org/)
+[![IEEE](https://img.shields.io/badge/Index-IEEE-red)](https://ieeexplore.ieee.org/document/10588893)
+[![SMARTNET](https://img.shields.io/badge/PDF-SMARTNET-green)](https://smartness2030.tech/wp-content/uploads/2024/05/RC1.J17.pdf)
+[![Dataset](https://img.shields.io/badge/Dataset-AR/CG-purple)](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry.git)
+
+
+
 ## 1- Abstract
 Augmented Reality (AR) real-time interaction between users and digital overlays in the real world demands low latency to ensure seamless experiences. To address computational and battery constraints, AR devices often offload processing-intensive tasks to edge servers, enhancing performance and user experience. With the increasing adoption and complexity of AR applications, especially in remote rendering, accurately classifying AR network traffic becomes essential for effective resource allocation. This paper explores two methods based on Decision Tree (DT) and Random Forest (RF) to classify network traffic among AR, Cloud Gaming (CG), and other categories. We rigorously analyze specific features to precisely identify AR and CG traffic. Our models demonstrate robust performance, achieving accuracy rates ranging from 88.40% to 94.87% against pre-existing datasets. Moreover, we contribute with a novel dataset encompassing AR and CG traffic, curated specifically for this study and made publicly available to facilitate reproducible research in AR network traffic classification.
 
@@ -107,4 +114,9 @@ This document helps the reader of the paper to be able to reproduce the model an
 ## 8- License
 
 All the assets in this repo is released under the [BSD-3 License](https://opensource.org/license/bsd-3-clause/). You are free to use, modify, and distribute this software, provided that you include the original copyright notice and disclaimers. The BSD-3 License is a permissive open-source license that encourages collaboration and innovation. It grants you the freedom to adapt this software to your needs while respecting the original author's contributions. Feel free to contribute to the project or build upon it for your own projects. Please review the LICENSE file on the root of this repo for the full terms and conditions of this license.
+
+**Please cite:**
+
+A. Shirmarz, F. L. Verdi, S. K. Singh and C. E. Rothenberg, "From Pixels to Packets: Traffic Classification of Augmented Reality and Cloud Gaming," 2024 IEEE 10th International Conference on Network Softwarization (NetSoft), Saint Louis, MO, USA, 2024, pp. 195-203, doi: 10.1109/NetSoft60951.2024.10588893.
+keywords: {Telecommunication traffic;Cloud gaming;Rendering (computer graphics);User experience;Real-time systems;Servers;Resource management;Augmented Reality;Traffic Classification;ML}, 
 
