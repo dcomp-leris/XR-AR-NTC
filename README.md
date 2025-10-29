@@ -117,6 +117,6 @@ All the assets in this repo is released under the [BSD-3 License](https://openso
 
 **Please cite:**
 
-A. Shirmarz, F. L. Verdi, S. K. Singh and C. E. Rothenberg, "From Pixels to Packets: Traffic Classification of Augmented Reality and Cloud Gaming," 2024 IEEE 10th International Conference on Network Softwarization (NetSoft), Saint Louis, MO, USA, 2024, pp. 195-203, doi: 10.1109/NetSoft60951.2024.10588893.
-keywords: {Telecommunication traffic;Cloud gaming;Rendering (computer graphics);User experience;Real-time systems;Servers;Resource management;Augmented Reality;Traffic Classification;ML}, 
+    A. Shirmarz, F. L. Verdi, S. K. Singh and C. E. Rothenberg, "From Pixels to Packets: Traffic Classification of Augmented Reality and Cloud Gaming," 2024 IEEE 10th International Conference on Network Softwarization (NetSoft), Saint Louis, MO, USA, 2024, pp. 195-203, doi: 10.1109/NetSoft60951.2024.10588893.
+    keywords: {Telecommunication traffic;Cloud gaming;Rendering (computer graphics);User experience;Real-time systems;Servers;Resource management;Augmented Reality;Traffic Classification;ML}, 
 
